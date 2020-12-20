@@ -1,2 +1,2 @@
-# Maiagram-expo-firebase 🔥
+# Maiagram-expo-firebase 🐶
 
