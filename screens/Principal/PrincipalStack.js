@@ -1,0 +1,48 @@
+import React from 'react';
+import {createStackNavigator} from '@react-navigation/stack'
+import {StyleSheet, View, Text, Image} from 'react-native';
+import Colours from '../res/Colours'
+import PrincipalScreen from './PrincipalScreen';
+
+
+function LogoTitle() {
+  return (
+    <Image
+      style={{ width: 160, height: 50, marginTop: 5,alignSelf: 'center'}}
+      source={require('/Users/sandra/Maiagram-expo-firebase/assets/logov4.png')}
+    />
+  );
+}
+
+const Stack = createStackNavigator();
+
+const PrincipalStack = () => {
+    return (
+      <Stack.Navigator
+      screenOptions={{
+        headerStyle:{
+          backgroundColor: Colours.dark,
+          height: 80,
+          borderTopColor: Colours.light,
+          borderTopWidth: 20,
+        }
+      }}
+      >
+        <Stack.Screen
+          name="Home"
+          component={PrincipalScreen}
+          options={{ headerTitle: props => <LogoTitle  {...props} />}}
+        />
+      </Stack.Navigator>
+  );
+}
+
+const styles = StyleSheet.create({
+    header: {
+      height:150,
+      alignContent: 'center',
+    },
+    
+  });
+
+export default PrincipalStack;
